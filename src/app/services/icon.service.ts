@@ -24,7 +24,7 @@ export class IconService {
   ) { }
 
   public registerIcons(): void {
-    this.loadIcons(this.icons, '../../../assets/icons');
+    this.loadIcons(this.icons, 'assets/icons');
   }
 
   private loadIcons(iconKeys: string[], iconUrl: string): void {
