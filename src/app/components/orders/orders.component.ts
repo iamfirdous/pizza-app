@@ -26,7 +26,7 @@ export class OrdersComponent {
     { name: 'Veg Sandwich', quantity: 1, price: 5 },
   ];
   orders: Order[] = [
-    { id: 634871, customerName: 'Rick Harry', deliveryAddress: '#45, 2nd Main Road, Adyar, Chennai -600 412', status: 'received', items: [...this.items, ...this.items, ...this.items, ...this.items] },
+    { id: 634871, customerName: 'Rick Harry', deliveryAddress: '#45, 2nd Main Road, Adyar, Chennai -600 412', status: 'received', items: this.items },
     { id: 634874, customerName: 'Marty McFly', deliveryAddress: '#45, 2nd Main Road, Adyar, Chennai -600 412', status: 'preparing', items: this.items },
     { id: 634877, customerName: 'Forrest Gump', deliveryAddress: '#45, 2nd Main Road, Adyar, Chennai -600 412', status: 'preparing', items: this.items },
     { id: 634880, customerName: 'Barry', deliveryAddress: '#45, 2nd Main Road, Adyar, Chennai -600 412', status: 'ready', items: this.items },
