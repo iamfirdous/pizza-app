@@ -1,0 +1,22 @@
+<div class="menu">
+  <div class="logo">
+    <img src="../../../assets/images/pizza-app.png" />
+    <label>Pizza<span>App</span></label>
+  </div>
+
+  <div style="height: 20px"></div>
+
+  <div class="menu-item" [ngClass]="{ 'selected': item.title === selected }" *ngFor="let item of items"
+    (click)="selected = item.title">
+    <mat-icon [svgIcon]="item.icon"></mat-icon>
+    <label>{{item.title}}</label>
+  </div>
+
+  <div style="height: 24px"></div>
+  <label class="other">Other</label>
+  <div class="menu-item" [ngClass]="{ 'selected': item.title === selected }" *ngFor="let item of otherItems"
+    (click)="selected = item.title">
+    <mat-icon [svgIcon]="item.icon"></mat-icon>
+    <label>{{item.title}}</label>
+  </div>
+</div>

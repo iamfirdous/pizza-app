@@ -1,0 +1,56 @@
+<div class="main" [ngClass]="{ 'mobile': isMobile }">
+  <div class="main-content">
+    <div class="header" [ngClass]="{ 'mobile': isMobile }">
+      <div class="title">
+        <img src="../../../assets/images/burger.png" />
+        <label>Orders<span>.</span></label>
+      </div>
+      <div class="search">
+        <mat-icon [svgIcon]="'pa-search'"></mat-icon>
+        <input placeholder="Search" [(ngModel)]="search"/>
+      </div>
+    </div>
+
+    <label class="filter-label">Filter by</label>
+    <br>
+    <div class="filters">
+      <div class="filter received" [ngClass]="{ 'selected': filterReceived }" (click)="filterReceived = !filterReceived">
+        Received
+      </div>
+      <div class="filter preparing" [ngClass]="{ 'selected': filterPreparing }"
+        (click)="filterPreparing = !filterPreparing">
+        Preparing
+      </div>
+      <div class="filter ready" [ngClass]="{ 'selected': filterReady }" (click)="filterReady = !filterReady">
+        Ready
+      </div>
+    </div>
+
+    <div class="no-orders" *ngIf="isNoOrders()">
+      <div>
+        No orders found for selected filters or search text, try toggling the filters or clearing the search text.
+      </div>
+    </div>
+
+    <div class="orders">
+      <ng-container *ngFor="let order of orders">
+        <ng-container *ngIf="shouldShow(order.status)">
+          <div class="order" *ngIf="order.customerName.toLowerCase().trim().includes(search.toLowerCase().trim())">
+            <div class="details" (click)="openOrderDetails(order)">
+              <label class="order-id">#{{order.id}}</label>
+              <label class="customer">{{order.customerName}}</label>
+              <label class="items-total">{{order.items.length}} items - ${{getTotalAmount(order)}}</label>
+            </div>
+            <div class="status">
+              <div class="badge {{order.status}}">
+                {{order.status}}
+              </div>
+              <button *ngIf="order.status != 'ready'" (click)="changeStatus(order)">Change status</button>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+
+  </div>
+</div>

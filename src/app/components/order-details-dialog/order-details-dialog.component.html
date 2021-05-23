@@ -1,0 +1,47 @@
+<div class="dialog-main">
+  <div class="header">
+    <div class="title">
+      <label>Order Details.</label>
+      <mat-icon mat-dialog-close>close</mat-icon>
+    </div>
+  
+    <div class="order-details">
+      <div class="details">
+        <label class="order-id">#{{order.id}}</label>
+        <label class="customer">{{order.customerName}}</label>
+      </div>
+      <div class="status">
+        <div class="badge {{order.status}}">
+          {{order.status}}
+        </div>
+        <button *ngIf="order.status != 'ready'" (click)="changeStatus(order)">Change status</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="list">
+    <div class="list-header">
+      <label style="flex: 2">#</label>
+      <label class="item-name" style="flex: 8">Items</label>
+      <label style="flex: 2">Quantity</label>
+      <label style="flex: 2">Price ₹</label>
+    </div>
+    <div class="list-item" *ngFor="let item of order.items; let i = index" [ngClass]="{ 'odd': i % 2 === 0 }">
+      <label style="flex: 2">{{ i + 1 }}</label>
+      <label class="item-name" style="flex: 8">{{ item.name }}</label>
+      <label style="flex: 2">{{ item.quantity }}</label>
+      <label style="flex: 2">{{ item.price }}</label>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <div class="delivery">
+      <label class="label">Delivery Address</label>
+      <label class="address">{{ order.deliveryAddress }}</label>
+    </div>
+    <div class="total">
+      <label class="label">Total Amount</label>
+      <label class="amount">{{ getTotalAmount() }}</label>
+    </div>
+  </div>
+</div>

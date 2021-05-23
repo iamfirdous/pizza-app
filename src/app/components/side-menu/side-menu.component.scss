@@ -1,0 +1,63 @@
+.menu {
+  .logo {
+    margin-top: 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 84px;
+      height: 84px;
+    }
+
+    label {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 36px;
+      color: var(--primary);
+    }
+
+    label > span {
+      color: var(--accent);
+    }
+  }
+
+  .menu-item {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 56px;
+    margin: 8px 16px;
+    padding: 0px 16px;
+    color: var(--accent-light-1);
+    border-radius: 16px;
+    cursor: pointer;
+
+    mat-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 24px;
+    }
+
+    label {
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    &.menu-item:hover,
+    &.selected {
+      color: white;
+      background-color: var(--primary);
+
+      label {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .other {
+    margin-left: 32px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent-light-1);
+  }
+}

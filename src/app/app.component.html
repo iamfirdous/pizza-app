@@ -1,0 +1,12 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #side mode="side" [opened]="!isMobile" [mode]="isMobile ? 'over' : 'side'">
+    <side-menu></side-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button mat-icon-button class="menu-button" *ngIf="isMobile" (click)="side.toggle()">
+      <mat-icon [svgIcon]="'pa-menu'"></mat-icon>
+    </button>
+    
+    <orders [isMobile]="isMobile"></orders>
+  </mat-sidenav-content>
+</mat-sidenav-container>

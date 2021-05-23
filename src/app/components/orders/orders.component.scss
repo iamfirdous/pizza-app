@@ -1,0 +1,218 @@
+.main {
+  background-color: white;
+  padding: 42px 64px;
+
+  &.mobile {
+    padding: 24px 46px;
+  }
+}
+
+.main-content {
+  max-width: 1006px;
+  margin: auto;
+  margin-bottom: 64px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    &.mobile {
+      flex-direction: column;
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+
+      img {
+        width: 84px;
+        height: 84px;
+      }
+
+      label {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 48px;
+        color: var(--primary);
+      }
+
+      label > span {
+        color: var(--accent);
+      }
+    }
+
+    .search {
+      height: 54px;
+      padding: 0px 24px;
+      display: flex;
+      align-items: center;
+      background-color: var(--accent-light-2);
+      border-radius: 12px;
+
+      mat-icon {
+        margin-right: 16px;
+        color: var(--accent-light-1);
+      }
+
+      input {
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 18px;
+        color: var(--accent);
+      }
+
+      input::placeholder {
+        color: var(--accent-light-1);
+      }
+    }
+  }
+
+  .filter-label {
+    margin-top: 24px;
+    font-size: 18px;
+    color: var(--accent-light-1);
+  }
+
+  .filters {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    .filter {
+      border-radius: 24px;
+      font-family: "Josefin Sans";
+      font-size: 16px;
+      padding: 8px 32px 5px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .received {
+      color: var(--received);
+      border: 2px solid var(--received);
+
+      &.selected {
+        color: white;
+        background-color: var(--received);
+      }
+    }
+
+    .preparing {
+      color: var(--preparing);
+      border: 2px solid var(--preparing);
+
+      &.selected {
+        color: white;
+        background-color: var(--preparing);
+      }
+    }
+
+    .ready {
+      color: var(--ready);
+      border: 2px solid var(--ready);
+
+      &.selected {
+        color: white;
+        background-color: var(--ready);
+      }
+    }
+  }
+
+  .no-orders {
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+    
+    div {
+      font-size: 16px;
+      color: var(--accent-light-1);
+      text-align: center;
+      max-width: 462px;
+    }
+  }
+
+  .orders {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+
+    .order {
+      width: 258px;
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.12);
+      display: flex;
+      justify-content: space-between;
+
+      .details {
+        max-width: 138px;
+        margin-right: 4px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        
+        .order-id {
+          font-size: 10px;
+          color: var(--accent-light-1);
+          cursor: pointer;
+        }
+        
+        .customer {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 18px;
+          color: var(--accent);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          cursor: pointer;
+        }
+        
+        .items-total {
+          font-size: 14px;
+          color: var(--accent);
+          cursor: pointer;
+        }
+      }
+
+      .status {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .badge {
+          border-radius: 24px;
+          font-family: "Josefin Sans";
+          font-size: 10px;
+          padding: 8px 14px 5px;
+          text-transform: uppercase;
+          color: white;
+
+          &.received {
+            background-color: var(--received);
+          }
+  
+          &.preparing {
+            background-color: var(--preparing);
+          }
+  
+          &.ready {
+            background-color: var(--ready);
+          }
+        }
+
+        button {
+          margin-top: 8px;
+          border: none;
+          background: none;
+          font-family: "Josefin Sans";
+          font-size: 14px;
+          color: var(--primary);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
